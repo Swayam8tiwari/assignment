@@ -1,13 +1,13 @@
 const nodemailer = require('nodemailer');
-const { google } = require('googleapis');
-const express = require('express') 
+const { google } = require('googleapis');  
+const express = require('express') //using express
 const app= express();
 const OAuth2Data=require('./credentials.json')
 const fs = require('fs');  
 const filecontent= fs.readFileSync('assignment9aug.html') 
 const hostname='127.0.0.1'; 
 const port= 3000;  
-// These id's and secrets should come from .json file.
+// These id's and secrets should come from credential.json file.
 const CLIENT_ID = OAuth2Data.web.client_id;
 const CLEINT_SECRET = OAuth2Data.web.client_secret;
 const REDIRECT_URI = OAuth2Data.web.redirect_uris;
@@ -26,10 +26,10 @@ oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
 app.use(express.urlencoded({ extended: true}));
 app.get('/',(req,res)=>{
-res.end(filecontent);
+res.end(filecontent);//rendering html file for interface
 });
 app.post('/submit',(req,res)=>{ 
-
+//processing input data
 
 let data1=JSON.stringify(req.body.from);
 let data2=JSON.stringify(req.body.to); 
