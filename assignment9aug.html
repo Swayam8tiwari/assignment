@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gmail api</title> 
+    <style> 
+    div{ 
+     width: 83%; 
+     padding: 10%; 
+     background-color: lightgrey;
+    }  
+    input{ 
+        display: block;
+    } 
+    body{ 
+        margin: 14% 14%;
+    }
+    </style>
+</head>
+<body>
+    <div> 
+        <form action="/submit" method="POST"> 
+            <span><h3>from</h3></span> 
+            <input type="email" name="from" id="from"> 
+            <span><h3>to</h3></span>  
+            <input type="email" name="to" id="to"> 
+            <span><h3>subject</h3></span>
+            <input type="text" name="subbody" id="subbody"> 
+            <span><h3>body</h3></span> 
+            <input type="text" name="body" id="body"> 
+            <input type="submit" >
+        </form>
+    </div> 
+    </body>
+</html>
